@@ -83,6 +83,16 @@ class list {
             }
             cout<<"Not Found!"<<endl;
         }
+        ~list() {
+            if (head == nullptr) return;
+            node* current = head;
+            node* nextNode;
+            while (current != nullptr) {
+                nextNode = current->next;
+                delete current;
+                current = nextNode;
+            }
+        }
 };
 
 
