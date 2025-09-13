@@ -106,6 +106,16 @@ class list {
             delete temp;
             if(head == nullptr) tail = nullptr; // if list becomes empty
         }
+        ~list() {
+            if (head == nullptr) return;
+            node* current = head;
+            node* nextNode;
+            while (current != nullptr) {
+                nextNode = current->next;
+                delete current;
+                current = nextNode;
+            }
+        }
 };
 
 
