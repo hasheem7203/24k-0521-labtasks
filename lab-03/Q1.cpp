@@ -66,6 +66,9 @@ class list {
                 delete newnode;
             return;
             }
+            newnode->next = temp->next;
+            temp->next = newnode;
+            if(newnode->next == nullptr) tail = newnode;
         }
         void search(string key){
             node* temp=head;
